@@ -30,8 +30,6 @@ return {
       -- Setup LSP for TypeScript and JavaScript (including JSX, React, TSX, and React)
       lspconfig.ts_ls.setup({capabilities = capabilities})
       -- Setup LSP for Eslint
-      lspconfig.eslint.setup({capabilities = capabilities})
-      -- Setup for Python (Pyright) with virtual environment support
       lspconfig.pyright.setup({capabilities = capabilities})
 
       -- Keymappings for LSP actions
