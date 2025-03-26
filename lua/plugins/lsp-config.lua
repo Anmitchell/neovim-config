@@ -18,20 +18,21 @@ return {
   -- Configering LSP's for neovim
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     config = function()
-      local lspconfig = require("lspconfig")
-
-      -- Setup LSP server for Lua
-      lspconfig.lua_ls.setup({})
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
       
+      local lspconfig = require("lspconfig")
+      -- Setup LSP server for Lua
+      lspconfig.lua_ls.setup({capabilities = capabilities})
       -- Setup LSP for Java
-      lspconfig.jdtls.setup({})
-
+      lspconfig.jdtls.setup({capabilities = capabilities})
       -- Setup LSP for TypeScript and JavaScript (including JSX, React, TSX, and React)
-      lspconfig.ts_ls.setup({})
-
+      lspconfig.ts_ls.setup({capabilities = capabilities})
+      -- Setup LSP for Eslint
+      lspconfig.eslint.setup({capabilities = capabilities})
       -- Setup for Python (Pyright) with virtual environment support
-      lspconfig.pyright.setup({})
+      lspconfig.pyright.setup({capabilities = capabilities})
 
       -- Keymappings for LSP actions
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
