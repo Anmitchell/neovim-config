@@ -1,6 +1,5 @@
--- Import Lazy package manager
+-- Import lazy package manager
 require("config.lazy")
 
--- Import Vim options
-require("vim-options")
-
+-- Import vim options
+require("editor-settings.options")

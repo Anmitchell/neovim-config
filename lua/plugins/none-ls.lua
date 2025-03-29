@@ -17,5 +17,6 @@ return {
 
 		-- Vim commands for lsp wrapper
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+    vim.diagnostic.config({ virtual_text = false })
 	end,
 }
